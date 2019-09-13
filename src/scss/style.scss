@@ -1,0 +1,254 @@
+@import 'reset';
+
+$font-l: 20px;
+$font-m: 16px;
+
+*:focus {
+	outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  height: 43px;
+	border: 1px solid #E8E8E8;
+	background-color: #fff;
+	color: #A6A6A6;
+	border-radius: 5px;
+  font-size: $font-m;
+  padding: 10px;
+  &:hover {
+    background-color: #F04751;
+    color: #fff;
+    @media (max-width: 414px) {
+      background-color: #fff;
+      color: #A6A6A6;
+    }
+  }
+  &.active {
+    background-color: #F04751;
+    color: #fff;
+  }
+}
+
+.wrap {
+	width: 1024px;
+	margin: 0 auto;
+	font-family: 微軟正黑體;
+	font-size: $font-m;
+  position: relative;
+  @media (max-width: 414px) {
+    width: 100vw;
+  }
+}
+
+#topmenu {
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px solid #E8E8E8;
+  padding: 15px;
+  @media (max-width: 414px) {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 350px;
+  }
+}
+
+#disableclick {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: 9;
+  opacity: .6;
+  background-color: black;
+  @media (max-width: 414px) {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+#destpop {
+  position: absolute;
+  top: 65px;
+  left: 38px;
+  width: 75%;
+  background-color: #fff;
+	border: 1px solid #E8E8E8;
+  border-radius: 5px;
+  display: grid;
+	grid-template-areas: 'destmenu'
+											 'destlist'
+											 'destbtn';
+  grid-template-rows: 75px auto 80px;
+  @media (max-width: 414px) {
+    $width: 90vw;
+    $height: 90vh;
+    width: $width !important;
+    height: $height !important;
+    top: calc(50vh - (#{$height} / 2));
+    left: calc(50vw - (#{$width} / 2));
+    grid-template-areas: 'title title title'
+                         'destmenu destlist destlist'
+                         'destbtn destbtn destbtn';
+    grid-template-rows: 15% 65% 20%;
+    grid-template-columns: 30% 35% 35%;
+    z-index: 10;
+    overflow-y: auto;
+  }
+  @media (max-width: 320px) {
+    width: 100vw !important;
+    left: 0;
+  }
+	.title {
+    grid-area: title;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    p {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+    h2 {
+      display: inline;
+      text-align: center;
+      font-size: $font-l;
+      color: #FDC22A;
+    }
+    button {
+      width: 40px;
+      height: 40px;
+      font-size: $font-m;
+      color: #E8E8E8;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 1px solid #E8E8E8;
+      padding: 0;
+    }
+    @media (max-width: 414px) {
+      display: flex;
+    }
+	}
+	#destmenu {
+    grid-area: destmenu;
+    display: flex;
+    align-items: flex-end;
+    background-color: #F5F5F5;
+    padding: 0 0 0 10px;
+    @media (max-width: 414px) {
+      flex-direction: column;
+      justify-content: space-around;
+      height: 80%;
+      padding: 3px 0;
+    }
+		li {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      color: #AEA6A6;
+      box-sizing: border-box;
+      width: 14%;
+      height: 85%;
+      padding-left: 10px;
+      @media (max-width: 414px) {
+        width: 95%;
+        height: 20%;
+      }
+      @media (max-width: 320px) {
+        padding: 0;
+      }
+			h3 {
+				font-size: $font-l;
+				font-weight: bold;
+				padding: 5px 2px;
+			}
+      &:hover, &.active {
+        background-color: #fff;
+        border: 1px solid #E8E8E8;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+        cursor: pointer;
+        h3 {
+          color: #000;
+        }
+        @media (max-width: 414px) {
+          border: 1px solid #E8E8E8;
+          border-right: none;
+          border-radius: 5px 0 0 5px;
+        }
+      }
+		}
+	}
+	#destlist {
+		grid-area: destlist;
+    background-color: #fff;
+    padding: 0 15px;
+    @media (max-width: 414px) {
+      overflow-y: scroll;
+      padding: 0 5px;
+    }
+		form {
+			display: grid;
+			grid-template-areas: 'label location';
+      grid-auto-columns: 20% 80%;
+      margin-top: 20px;
+      @media (max-width: 414px) {
+        width: 100%;
+        grid-template-areas: 'label'
+                             'location';
+        grid-template-columns: 100%;
+      }
+		}
+		label {
+			grid-area: label;
+			font-size: $font-l;
+			font-weight: bold;
+      padding: 5px;
+		}
+		.location {
+			grid-area: location;
+			display: flex;
+			flex-wrap: wrap;
+			.btn {
+				margin: 5px 10px;
+			}
+		}
+	}
+	#confirmbtn {
+		grid-area: destbtn;
+		display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 15px;
+    @media (max-width: 414px) {
+      justify-content: space-around;
+    }
+		.resetbtn, .applybtn {
+			border: none;
+      background-color: #fff;
+      font-size: $font-m;
+      padding: 10px;
+      margin: 5px 10px;
+      @media (max-width: 414px) {
+        width: 40%;
+        border: 1px solid #E8E8E8;
+        border-radius: 5px;
+      }
+    }
+    .applybtn {
+      color: #F04751;
+      @media (max-width: 414px) {
+        color: #000;
+        background-color: #FDC22A;
+      }
+    }
+	}
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>index</title>
+</head>
+<body>
+  <div class="wrap">
+    <div id="topmenu">
+        <button id="destbtn" class="btn">目的地</button>
+        <button class="btn">出發日期</button>
+        <button class="btn">行程類別</button>
+        <button class="btn">進行方式</button>
+        <button class="btn">價格(CNY)</button>
+        <button class="btn">行程長度(天)</button>
+        <button class="btn">適用對象(年齡)</button>
+    </div>
+    <div id="disableclick"></div>
+    <div id="datepop" class="popmenu hide"></div>
+    <div id="destpop" class="popmenu hide">
+      <div class="title">
+        <p></p>
+        <h2>目的地</h2>
+        <button>X</button>
+      </div>
+      <ul id="destmenu">
+        <li id="northamerica" class="active"><h3>北美洲</h3><p>紐約 洛杉磯</p></li>
+        <li id="europe"><h3>歐洲</h3><p>倫敦 巴黎</p></li>
+        <li id="oceania"><h3>大洋洲</h3><p>雪梨 墨爾本</p></li>
+        <li id="southeasternasia"><h3>東南亞</h3><p>新加坡 曼谷</p></li>
+        <li id="eastasia"><h3>東亞</h3><p>東京 香港</p></li>
+      </ul>
+      <div id="destlist">
+        <form id="us" class="northamerica">
+          <label>美國</label>
+          <div class="location">
+            <button class="btn">紐約</button>
+            <button class="btn">洛杉磯</button>
+            <button class="btn">舊金山</button>
+            <button class="btn">奧蘭多</button>
+            <button class="btn">芝加哥</button>
+            <button class="btn">華盛頓</button>
+            <button class="btn">波士頓</button>
+            <button class="btn">夏威夷</button>
+          </div>
+        </form>
+        <form id="ca" class="northamerica">
+          <label>加拿大</label>
+          <div class="location">
+            <button class="btn">溫哥華</button>
+            <button class="btn">艾德蒙頓</button>
+            <button class="btn">多倫多</button>
+            <button class="btn">渥太華</button>
+            <button class="btn">蒙特利爾</button>
+          </div>
+        </form>
+        <form id="uk" class="europe hide">
+          <label>英國</label>
+          <div class="location">
+            <button class="btn">倫敦</button>
+            <button class="btn">愛丁堡</button>
+            <button class="btn">曼徹斯特</button>
+            <button class="btn">利物浦</button>
+            <button class="btn">牛津</button>
+          </div>
+        </form>
+        <form id="fr" class="europe hide">
+          <label>法國</label>
+          <div class="location">
+            <button class="btn">巴黎</button>
+            <button class="btn">尼斯</button>
+            <button class="btn">里昂</button>
+            <button class="btn">諾爾曼</button>
+            <button class="btn">馬塞</button>
+            <button class="btn">普羅旺斯</button>
+          </div>
+        </form>
+        <form id="de" class="europe hide">
+          <label>德國</label>
+          <div class="location">
+            <button class="btn">萊比錫</button>
+            <button class="btn">慕尼黑</button>
+            <button class="btn">波昂</button>
+            <button class="btn">法蘭克福</button>
+            <button class="btn">漢堡</button>
+            <button class="btn">布萊梅</button>
+            <button class="btn">科隆</button>
+            <button class="btn">柏林</button>
+          </div>
+        </form>
+        <form id="au" class="oceania hide">
+          <label>澳洲</label>
+          <div class="location">
+            <button class="btn">雪梨</button>
+            <button class="btn">墨爾本</button>
+            <button class="btn">黃金海岸</button>
+            <button class="btn">坎培拉</button>
+            <button class="btn">布里斯本</button>
+            <button class="btn">珀斯</button>
+          </div>
+        </form>
+        <form id="nz" class="oceania hide">
+          <label>紐西蘭</label>
+          <div class="location">
+            <button class="btn">奧克蘭</button>
+            <button class="btn">威靈頓</button>
+            <button class="btn">蒂瑪魯</button>
+            <button class="btn">基督城</button>
+            <button class="btn">皇后鎮</button>
+          </div>
+        </form>
+        <form id="sg" class="southeasternasia hide">
+          <label>新加坡</label>
+          <div class="location">
+            <button class="btn">樟宜</button>
+            <button class="btn">聖淘沙</button>
+          </div>
+        </form>
+        <form id="th" class="southeasternasia hide">
+          <label>泰國</label>
+          <div class="location">
+            <button class="btn">曼谷</button>
+            <button class="btn">清邁</button>
+            <button class="btn">芭達雅</button>
+            <button class="btn">普吉府</button>
+            <button class="btn">阿瑜陀耶</button>
+          </div>
+        </form>
+        <form id="my" class="southeasternasia hide">
+          <label>馬來西亞</label>
+          <div class="location">
+            <button class="btn">吉隆坡</button>
+            <button class="btn">雲頂高原</button>
+            <button class="btn">京那巴魯山</button>
+            <button class="btn">馬布島</button>
+          </div>
+        </form>
+        <form id="jp" class="eastasia hide">
+          <label>日本</label>
+          <div class="location">
+            <button class="btn">東京</button>
+            <button class="btn">京都</button>
+            <button class="btn">名古屋</button>
+            <button class="btn">北海道</button>
+            <button class="btn">大阪</button>
+            <button class="btn">青森</button>
+            <button class="btn">廣島</button>
+            <button class="btn">九州</button>
+            <button class="btn">沖繩</button>
+          </div>
+        </form>
+        <form id="hk" class="eastasia hide">
+          <label>香港</label>
+          <div class="location">
+            <button class="btn">中環</button>
+            <button class="btn">九龍城</button>
+            <button class="btn">大嶼山</button>
+            <button class="btn">尖沙嘴</button>
+            <button class="btn">油麻地</button>
+            <button class="btn">銅鑼灣</button>
+          </div>
+        </form>
+        <form id="kr" class="eastasia hide">
+          <label>南韓</label>
+          <div class="location">
+            <button class="btn">首爾</button>
+            <button class="btn">釜山</button>
+            <button class="btn">大邱</button>
+            <button class="btn">光州</button>
+            <button class="btn">仁川</button>
+            <button class="btn">濟州</button>
+          </div>
+        </form>
+      </div>
+      <div id="confirmbtn">
+        <button class="resetbtn" type="reset">清除</button>
+        <button class="applybtn" type="submit">套用</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
